@@ -1,0 +1,47 @@
+  <div class="container"> 
+      <div class="row">
+        <h4 class="text-center">Agregar a novedades</h4>
+       <form action="/admin/novedades/agregar" method="post" enctype="multipart/form-data">
+           
+           <div class="mb-3 row">
+   
+            <label for="" class="col-sm-2 col-form-label">Nueva actividad</label>
+            <div class="mb-3 row">
+              <input type="text" class="form-control" id="inputTitulo" 
+            placeholder="" name="titulo">
+           </div>
+         </div>
+           <div class="mb-3 row">
+             <label for="" class="col-sm-2 col-form-label">Subtitulo</label>
+              <div class="mb-3 row">
+               <input type="text" class="form-control" id="inputSubtitulo"
+               placeholder="" name="subtitulo">
+              </div> 
+             
+
+
+              <div class="mb-3 row">
+             <label for="" class="col-sm-2 col-form-label">Cuerpo</label>
+              <div class="mb-3 row">
+               <input type="text" class="form-control" id="inputTexto"
+               placeholder="" name="cuerpo">
+              </div>
+           </div>
+            <div class="mb-3 row">
+                <label for="" class="col-sm-2 col-form-label"> Imagen <input type="file" name="imagen" id="imagen" ></label>
+              </div>
+           
+           <button onclick="return confirm('Desea proceder?')"  type="submit" class="btn btn-primary" style="width: max-content; margin:0px 45%"  >Agregar </button>
+
+           </form>
+      </div>
+  </div>
+            {{#if error}}
+               <p>{{message}} </p>
+            {{/if}}
+
+            <div class="text-end">
+              <a class="btn btn-danger btn-sm" href="/admin/login/logout"><i class="bi bi-box-arrow-in-right"></i></a>
+            </div>
+       
+

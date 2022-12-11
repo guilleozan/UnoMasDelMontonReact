@@ -1,0 +1,51 @@
+  <div class="container"> 
+      <div class="row">
+        <h4 class="text-center">Editar novedades</h4>
+       <form action='/admin/novedades/editar' method="post" enctype="multipart/form-data">
+       <input type="hidden" value="{{novedad.id}} "name="id" > 
+           
+           <div class="mb-3 row">
+   
+            <label for="" class="col-sm-2 col-form-label">Nueva Actividad</label>
+            <div class="mb-3 row">
+              <input type="text" class="form-control" 
+            placeholder=""  value="{{novedad.titulo}} "name="titulo">
+           </div>
+         </div>
+           <div class="mb-3 row">
+             <label for="" class="col-sm-2 col-form-label">Subtitulo</label>
+              <div class="mb-3 row">
+               <input type="text" class="form-control" 
+               placeholder=""  value="{{novedad.subtitulo}} " name="subtitulo">
+              </div> 
+
+              <div class="mb-3 row">
+             <label for="" class="col-sm-2 col-form-label">Cuerpo</label>
+              <div class="mb-3 row">
+               <textarea type="text" class="form-control"  name="cuerpo"
+               placeholder="" >{{novedad.cuerpo}}</textarea>
+              </div>
+           </div>
+            <div class="mb-3 row">
+                <label for="" class="col-sm-2 col-form-label"> Imagen 
+                  <input type="file" name="imagen" id="imagen"></label>
+
+                <label for=""><Input type="checkbox" name="img_delete" id="img_delete" value="1"> 
+                  </Input>Eliminar imagen</label>
+                  <input type="hidden" name="img_original" value="{{novedad.img_id}}">
+              </div>
+           
+           <button type="submit" href="" class="btn btn-primary"  style="width: max-content; margin:0px 45%"  >Enviar </button>
+
+           </form>
+      </div>
+  </div>
+            {{#if error}}
+               <p>{{message}} </p>
+            {{/if}}
+
+            <div class="text-end">
+              <a class="btn btn-danger btn-sm" href="/admin/login/logout"><i class="bi bi-box-arrow-in-right"></i></a>
+            </div>
+       
+
